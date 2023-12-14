@@ -2,26 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Custom Tailwind classes for Genshin Impact style */
+
+
+/* Colors */
+.genshin-purple {
+  --primary-color: #8e88e6; /* Purple */
+  --secondary-color: #fec5bb; /* Light Pink */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.genshin-blue {
+  --primary-color: #61a1ff; /* Blue */
+  --secondary-color: #c1d8ff; /* Light Blue */
 }
 
+.genshin-yellow {
+  --primary-color: #ffcf53; /* Yellow */
+  --secondary-color: #ffedd2; /* Light Yellow */
+}
+
+.genshin-green {
+  --primary-color: #7ad68a; /* Green */
+  --secondary-color: #c6f0c1; /* Light Green */
+}
+
+/* Fonts */
+.genshin-font {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Example font */
+}
+
+/* Example usage */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* Using Genshin Impact colors */
+  color: var(--primary-color);
+  background: rgb(78, 7, 7);
 }
+
+/* Additional Tailwind classes and utility classes can be used as needed */
+/* For example: p-4 (padding), text-lg (text size), etc. */

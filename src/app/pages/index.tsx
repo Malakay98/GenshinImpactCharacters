@@ -23,21 +23,21 @@ const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <main>
-      <div>
+    <main className="genshin-blue text-center py-8"> {/* Apply Tailwind classes */}
+      <div className="container mx-auto">
         {loading && <p>Loading...</p>}
         {error && <p>{error}</p>}
         {data &&
-          <div>
-            <h2>{data.message}</h2>
-            <p>Here you will find information of the videogame "Genshin Impact."</p>
-            <div>
-              <h3>Our current data</h3>
-              <ul>
-                <li><p>Characters</p>{data.statistics.characters}</li>
-                <li><p>Media</p>{data.statistics.media}</li>
-                <li><p>Voices</p>{data.statistics.voices}</li>
-                <li><p>Banners</p>{data.statistics.banners}</li>
+          <div className="text-white">
+            <h2 className="genshin-font text-3xl">{data.message}</h2>
+            <p className="mt-4">Here you will find information about the video game "Genshin Impact."</p>
+            <div className="genshin-green mt-8">
+              <h3 className="genshin-font text-2xl">Our current data</h3>
+              <ul className="mt-4">
+                <li><p className="genshin-font">Characters: {data.statistics.characters}</p></li>
+                <li><p className="genshin-font">Media: {data.statistics.media}</p></li>
+                <li><p className="genshin-font">Voices: {data.statistics.voices}</p></li>
+                <li><p className="genshin-font">Banners: {data.statistics.banners}</p></li>
               </ul>
             </div>
           </div>
