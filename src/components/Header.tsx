@@ -1,21 +1,13 @@
 import React from 'react';
+import './../styles/header.css'; // Import the CSS file
 
 const Header: React.FC = () => {
-  const headerStyle: React.CSSProperties = {
-    backgroundColor: '#fec5bb', // Light Pink
-    color: '#000', // Black text color
-    padding: '20px',
-    textAlign: 'center',
-  };
-
   return (
-    <header style={headerStyle}>
+    <header className="header"> {/* Apply the 'header' class */}
       <nav>
-        {/* Your navigation links or any content for the header */}
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/about">About</a></li>
-          {/* Add other navigation links as needed */}
         </ul>
       </nav>
     </header>
