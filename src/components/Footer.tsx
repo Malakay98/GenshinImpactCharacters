@@ -7,9 +7,9 @@ const Footer: React.FC = () => {
       {/* Your footer content */}
       <p>&copy; 2023 Franco Fernandez. All rights reserved.</p>
       <p>
-        Special thanks to{' '}
-        <a href="http://https://gshimpact.vercel.app" target="_blank" rel="noopener noreferrer">
-          GSHIMPACT API
+        Special thanks to{''}
+        <a href="https://github.com/genshindev" target="_blank" rel="noopener noreferrer">
+        genshin.dev
         </a>
       </p>
     </footer>

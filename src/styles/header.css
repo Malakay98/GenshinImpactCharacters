@@ -1,7 +1,7 @@
 /* Styles for the header */
 .header {
-    background-color: #fec5bb; /* Light Pink */
-    color: #000; /* Black text color */
+    background-color: #ffffff; /* Light Pink */
+    color: #000000; /* Black text color */
     padding: 20px;
     text-align: center;
   }
@@ -20,4 +20,9 @@
   .header a {
     text-decoration: none;
     color: #61a1ff; /* Blue for links */
+  }
+
+  .header a:hover {
+    color: #2f5081;
+    font-weight: bold;
   }

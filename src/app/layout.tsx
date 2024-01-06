@@ -5,7 +5,7 @@ import './../styles/global.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Genshin Impact Characters'
+  title: 'Genshin Impact Data'
 }
 
 export default function RootLayout({

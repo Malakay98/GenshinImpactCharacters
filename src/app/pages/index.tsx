@@ -1,25 +1,28 @@
 "use client";
 import { useEffect, useState } from 'react';
-import { fetchData } from '../../api'; // Adjust the path
+import { fetchEntityData } from '../../api'; // Adjust the path
 
 const HomePage: React.FC = () => {
-  const [data, setData] = useState<any>(null);
+  const [entityData, setEntityData] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
 
   useEffect(() => {
-    const getData = async () => {
+    const fetchData = async () => {
       try {
-        const fetchedData = await fetchData();
-        setData(fetchedData);
+        const entity = 'characters'; // Replace with the desired entity ('characters', 'boss', 'artifacts', etc.)
+        const subEntity = 'albedo'; // Replace with the desired sub-entity if applicable
+        const fileName = 'en.json'; // Replace with the desired file name
+        const data = await fetchEntityData(entity, subEntity, fileName);
+        setEntityData(data);
       } catch (error) {
-        setError('Error fetching data'); // Set a specific error message or handle the error appropriately
+        console.error('Error fetching entity data:', error);
       } finally {
         setLoading(false); // Whether successful or not, stop loading
       }
     };
 
-    getData();
+    fetchData();
   }, []);
 
   return (
@@ -27,21 +30,17 @@ const HomePage: React.FC = () => {
       <div className="container mx-auto">
         {loading && <p>Loading...</p>}
         {error && <p>{error}</p>}
-        {data &&
+        {entityData && (
           <div className="text-white">
-            <h2 className="genshin-font text-3xl">{data.message}</h2>
             <p className="mt-4">Here you will find information about the video game "Genshin Impact."</p>
             <div className="genshin-green mt-8">
-              <h3 className="genshin-font text-2xl">Our current data</h3>
-              <ul className="mt-4">
-                <li><p className="genshin-font">Characters: {data.statistics.characters}</p></li>
-                <li><p className="genshin-font">Media: {data.statistics.media}</p></li>
-                <li><p className="genshin-font">Voices: {data.statistics.voices}</p></li>
-                <li><p className="genshin-font">Banners: {data.statistics.banners}</p></li>
-              </ul>
+              <div>
+                {/* Display entity data */}
+                <p>{JSON.stringify(entityData.name)}</p>
+              </div>
             </div>
           </div>
-        }
+        )}
       </div>
     </main>
   );

@@ -1,13 +1,10 @@
-import axios, {AxiosResponse} from "axios";
-
-const API_BASE_URL = "https://gsi.fly.dev/";
-
-export const fetchData = async (): Promise<any> => {
-    try {
-        const response: AxiosResponse<any> = await axios.get(`${API_BASE_URL}`);
-        return response.data;
-    } catch (error) {
-        console.error('API error:', error);
-        throw error;
-    }
+// Function to fetch local data
+export const fetchEntityData = async (entity: string, subEntity: string, fileName: string): Promise<any> => {
+  try {
+    const data = await import(`../assets/data/${entity}/${subEntity}/${fileName}`);
+    return data.default; // Assuming the data is exported as default in the JSON file
+  } catch (error) {
+    console.error(`Error fetching ${fileName} data:`, error);
+    throw error;
+  }
 };
